@@ -5,8 +5,8 @@
  */
 
 'use strict';
-import 'Globals.js';
-import 'Utilities.js';
+import H from '../parts/Globals.js';
+import '../parts/Utilities.js';
 
 var each = H.each,
     pick = H.pick,
