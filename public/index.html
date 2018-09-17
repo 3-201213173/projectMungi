@@ -2,7 +2,7 @@
 
 <head>
 	
-	var pmcall = 20;
+	
 	
 	<script language="JavaScript">
 		var appcondition = 0;
@@ -190,7 +190,7 @@ Highcharts.chart('container', {
             load: function () {
 
                 // set up the updating of the chart each second
-                var series = this.series[1];
+                var series = this.series[0];
                 setInterval(function () {
 			var bb = document.getElementById("pm10").innerHTML;
 			pmcall = bb;
