@@ -5,7 +5,7 @@
  */
 
 'use strict';
-import H from 'Globals.js';
+import 'Globals.js';
 import 'Utilities.js';
 
 var each = H.each,
