@@ -180,6 +180,67 @@ Highcharts.chart('container', {
         }())
     }]
 });
+	  
+	  Highcharts.chart('container', {
+    chart: {
+        type: 'spline',
+        animation: Highcharts.svg, // don't animate in old IE
+        marginRight: 15,
+        events: {
+            load: function () {
+
+                // set up the updating of the chart each second
+                var series = this.series[1];
+                setInterval(function () {
+			var bb = document.getElementById("pm10").innerHTML;
+			pmcall = bb;
+                    var x = (new Date()).getTime(), // current time
+                        y = parseInt(bb);
+						
+                    series.addPoint([x, y], true, true);
+                }, 10000);
+            }
+        }
+    },
+    
+   
+        plotLines: [{
+            value: 1,
+            width: 1,
+            color: '#131313'
+        }]
+    },
+    tooltip: {
+        formatter: function () {
+            return '<b>' + this.series.name + '</b><br/>' +
+                Highcharts.dateFormat('%Y-%m-%d %H:%M:%S', this.x) + '<br/>' +
+                Highcharts.numberFormat(this.y, 2);
+        }
+    },
+    legend: {
+        enabled: false
+    },
+    exporting: {
+        enabled: false
+    },
+    series: [{
+        name: 'pm10 value',
+        data: (function () {
+            // generate an array of random data
+            var data = [],
+                time = (new Date()).getTime(),
+                i;
+
+            for (i = -19; i <= 0; i += 1) {
+                data.push({  
+                    x: time + i * 1000,
+                    y: 20
+                });
+            }
+            return data;
+        }())
+    }]
+});
   </script>
 	<script src="raphael-2.1.4.min.js"></script>
     <script src="justgage.js"></script>
