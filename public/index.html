@@ -2,6 +2,7 @@
 
 <head>
 	
+	var pmcall = 20;
 	
 	<script language="JavaScript">
 		var appcondition = 0;
@@ -122,8 +123,9 @@ Highcharts.chart('container', {
                 var series = this.series[0];
                 setInterval(function () {
 			var bb = document.getElementById("pm2").innerHTML;
+			pmcall = bb;
                     var x = (new Date()).getTime(), // current time
-                        y = bb;
+                        y = parseInt(bb);
 						
                     series.addPoint([x, y], true, true);
                 }, 1000);
@@ -169,7 +171,7 @@ Highcharts.chart('container', {
                 i;
 
             for (i = -19; i <= 0; i += 1) {
-                data.push({
+                data.push({  
                     x: time + i * 1000,
                     y: 20
                 });
@@ -199,7 +201,7 @@ Highcharts.chart('container', {
    function myMethod()
 	{
 		var aa = document.getElementById("pm2").innerHTML;
-		aa++;
+		
 		g5.refresh(parseInt(aa));
 	}
     });
