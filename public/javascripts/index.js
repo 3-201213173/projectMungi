@@ -10,7 +10,7 @@ $(document).ready(function () {
   var pm10length = pm10Data.length;
   var pm25length = pm25Data.length;
 
-   
+   document.getElementById("pm2") = "30";
    document.getElementById("pm2").innerHTML = "20";
    document.getElementById("pm10").innerHTML = "50";
 
