@@ -1,3 +1,12 @@
+var test_script={
+ plus_test: function(num){
+  try{
+   window.java.getNum(num+num);
+  }catch(err){
+   console.long("plus_test()"+err);
+  }
+ }
+}
 
 $(document).ready(function () {
   pm2Data = [],
