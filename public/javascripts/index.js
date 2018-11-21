@@ -1,3 +1,12 @@
+var test_script={
+ plus_test: function(num){
+  try{
+   window.java.getNum(num+num);
+  }catch(err){
+   console.long("plus_test()"+err);
+  }
+ }
+}
 
 $(document).ready(function () {
   pm2Data = [],
@@ -14,15 +23,7 @@ $(document).ready(function () {
    document.getElementById("pm2").innerHTML = "20";
    document.getElementById("pm10").innerHTML = "50";
 
-	var test_script={
- plus_test: function(num){
-  try{
-   window.java.getNum(num+num);
-  }catch(err){
-   console.long("plus_test()"+err);
-  }
- }
-}
+	
   var ws = new WebSocket('wss://' + location.host);
   ws.onopen = function () {
     console.log('Successfully connect WebSocket');
