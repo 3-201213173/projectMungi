@@ -4,12 +4,13 @@
 	
 	
 	
-	<script language="JavaScript">
-		
-		function getPM() {
- var p = document.getElementById("pm2").innerHTML;
- var m =  document.getElementById("pm10").innerHTML;
- window.java.getDustPM(p,m);
+	function testpm2() {
+ var t  =  document.getElementById("pm2").innerHTML;
+ window.java.getPM2(t);
+}
+function testpm10() {
+ var t  =  document.getElementById("pm10").innerHTML;
+ window.java.getPM10(t);
 }
 		var appcondition = 0;
 
