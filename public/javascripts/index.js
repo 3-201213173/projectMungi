@@ -10,7 +10,7 @@ $(document).ready(function () {
   var pm10length = pm10Data.length;
   var pm25length = pm25Data.length;
 
-   document.getElementById("pm2") = "30";
+  
    document.getElementById("pm2").innerHTML = "20";
    document.getElementById("pm10").innerHTML = "50";
 
@@ -54,7 +54,8 @@ if(obj.params.pm10>150){
 }   
       pm10Data.push(obj.params.pm10);
       pm25Data.push(obj.params.pm2);
-      rpmData.push(obj.params.rpm);     
+      rpmData.push(obj.params.rpm);
+	    result = obj.params.pm2;
     } catch (err) {
       console.error(err);
     }
